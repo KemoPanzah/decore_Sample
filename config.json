@@ -1,0 +1,11 @@
+{
+    "default": {
+        "app_id": "5f36494b-5cfe-44ef-b800-1d2c430a521d",
+        "app_port": 5555,
+        "state_path": "state"
+    },
+    "remote": {
+        "server_addr": "0.0.0.0",
+        "server_port": 51515
+    }
+}
