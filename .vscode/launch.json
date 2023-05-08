@@ -9,14 +9,7 @@
             "type": "python",
             "request": "launch",
             "program": "app.py",
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "decore prepare",
-            "type": "python",
-            "request": "launch",
-            "program": "app.py",
-            "args": ["prepare"],
+            "args": ["dev"],
             "console": "integratedTerminal"
         }
     ]
