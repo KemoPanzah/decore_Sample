@@ -1,5 +1,5 @@
 from decore_base import decore
-from decore_base.classes import Decore_base as Base
+from decore_base.classes.decore_base import Decore_base as Base
 from models.person_model import Person_model
 from models.account_model import Account_model
 from models.company_model import Company_model

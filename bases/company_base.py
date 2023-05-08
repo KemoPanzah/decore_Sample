@@ -1,5 +1,5 @@
 from decore_base import decore
-from decore_base.classes import Decore_base as Base
+from decore_base.classes.decore_base import Decore_base as Base
 from models.company_model import Company_model as Model
 
 @decore.base(p_title='Companies', p_model=Model)
