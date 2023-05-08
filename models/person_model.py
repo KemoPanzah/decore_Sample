@@ -1,4 +1,4 @@
-from uniform_base.extensions.conform_model import *
+from decore_base.extensions.conform_model import *
 
 class Person_model(Conform_model):
     first_name = CharField(verbose_name='First name')

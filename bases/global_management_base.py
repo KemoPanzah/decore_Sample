@@ -1,5 +1,5 @@
-from uniform_base import uniform as uf
-from uniform_base.classes import Uniform_base as Base
+from decore_base import decore
+from decore_base.classes import Decore_base as Base
 from models.person_model import Person_model
 from models.account_model import Account_model
 from models.company_model import Company_model
@@ -8,10 +8,10 @@ from models.company_model import Company_model
 from mimesis import Person, Finance
 from random import randrange
 
-@uf.base(p_title='Personal Management', p_icon='mdi-account-supervisor-circle-outline')
+@decore.base(p_title='Personal Management', p_icon='mdi-account-supervisor-circle-outline')
 class Global_management_base(Base):
     
-    @uf.function(p_type='init')
+    @decore.function(p_type='init')
     def query_tester(self):
         from peewee import DQ
         t_person_s = list(Person_model.select())
@@ -25,7 +25,7 @@ class Global_management_base(Base):
         t_or_test = Person_model.filter(t_or_chain)
         pass
 
-    @uf.function(p_type='init')
+    @decore.function(p_type='init')
     def create_company_s(self):
         while len(Company_model.select()) < 25:
             t_finance = Finance()
@@ -33,7 +33,7 @@ class Global_management_base(Base):
             t_item.title = t_finance.company()
             t_item.save()
 
-    @uf.function(p_type='init')
+    @decore.function(p_type='init')
     def create_person_s(self):        
         while len(Person_model.select()) < 50:
             t_person = Person()
@@ -45,7 +45,7 @@ class Global_management_base(Base):
             t_item.age = t_person.age(minimum=18, maximum=70)
             t_item.save()
 
-    @uf.function(p_type='init')
+    @decore.function(p_type='init')
     def connect_company_person(self):
         for person in Person_model.select():
             t_company_num = randrange(Company_model.select().count())
@@ -57,7 +57,7 @@ class Global_management_base(Base):
             if not bfound:
                 t_company_item.persons.add(person)
 
-    @uf.function(p_type='init')
+    @decore.function(p_type='init')
     def create_account_s(self):
         for i_person in Person_model.select():
             t_person = Person()
