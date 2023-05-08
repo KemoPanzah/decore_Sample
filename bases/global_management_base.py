@@ -29,7 +29,7 @@ class Global_management_base(Base):
     def create_company_s(self):
         while len(Company_model.select()) < 25:
             t_finance = Finance()
-            t_item = Company_model(self.create_id())
+            t_item = Company_model(t_item.create_id())
             t_item.title = t_finance.company()
             t_item.save()
 
@@ -37,7 +37,7 @@ class Global_management_base(Base):
     def create_person_s(self):        
         while len(Person_model.select()) < 50:
             t_person = Person()
-            t_item = Person_model(self.create_id())
+            t_item = Person_model(t_item.create_id())
             t_item.first_name = t_person.first_name()
             t_item.last_name = t_person.last_name()
             t_item.title = t_item.first_name + ' ' + t_item.last_name
@@ -63,7 +63,7 @@ class Global_management_base(Base):
             t_person = Person()
             t_item = Account_model.get_or_none(Account_model.person == i_person)
             if not t_item:
-                t_item = Account_model(self.create_id())
+                t_item = Account_model(t_item.create_id())
                 t_item.person = i_person
                 t_item.email = t_person.email()
                 t_item.title = t_item.email
