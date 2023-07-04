@@ -1,0 +1,11 @@
+# fmt: off
+import sys, os
+sys.path.append(os.path.abspath('../'))
+from decore_Base.decore_base import decore
+from bases import *
+# fmt: on
+
+if __name__ == '__main__':
+    @decore.app(title='Decore Sample Application')
+    def main():
+        pass
