@@ -31,10 +31,12 @@ class Global_management_base:
         t_account.password = 'test2'
         t_account.password = 'test3'
         t_account.save()
+        t_test = t_account.password
         t_account.password = 'test4'
         t_account.save()
         t_account.password = None
         t_account.save()
+        t_test = t_account.password
         t_account_s = list(Account_model.select())
         pass
 
