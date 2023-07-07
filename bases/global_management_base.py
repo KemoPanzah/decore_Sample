@@ -23,9 +23,17 @@ class Global_management_base:
     
     def test_item(self):
         t_account = Account_model()
+        t_account.id = '0c58c27f-1b4e-11ee-b2cd-309c23812330'
         t_account.title = 'test'
         t_account.email = 'test@mail.com'
-        t_account.password = 'test'
+        t_account.password = 'test1'
+        t_test= t_account.password
+        t_account.password = 'test2'
+        t_account.password = 'test3'
+        t_account.save()
+        t_account.password = 'test4'
+        t_account.save()
+        t_account.password = None
         t_account.save()
         t_account_s = list(Account_model.select())
         pass
