@@ -16,29 +16,33 @@ class Global_management_base:
     @decore.function(type='shot')
     def create_data(self):
         self.test_item()
-        self.query_tester()
-        self.create_company_s()
-        self.create_person_s()
+        # self.query_tester()
+        # self.create_company_s()
+        # self.create_person_s()
         # self.set_company_person()
     
     def test_item(self):
-        t_account = Account_model()
-        t_account.id = '0c58c27f-1b4e-11ee-b2cd-309c23812330'
-        t_account.title = 'test'
-        t_account.email = 'test@mail.com'
-        # t_account.password = 'test1'
-        # t_test= t_account.password
-        # t_account.password = 'test2'
-        # t_account.password = 'test3'
-        # t_account.save()
-        # t_test = t_account.password
-        t_account.password = 'test4'
-        t_account.save()
-        # t_account.password = None
-        # t_account.save()
-        # t_test = t_account.password
-        t_account_s = list(Account_model.select())
-        t_account_s = Account_model.query({'title__eq':'test'})
+        t_person = Person_model()
+        t_person.id = '0f50b843-1f3c-11ee-9a3a-309c23812330'
+        t_person.title = 'Jean Rohark'
+        t_person.first_name = 'Jean'
+        t_person.last_name = 'Rohark'
+        t_person.academic_degree = 'PhD'
+        t_person.age = 43
+        t_person.capacity = 1
+        t_person.save()
+
+        t_company = Company_model()
+        t_company.id = '0f50b844-1f3c-11ee-8046-309c23812330'
+        t_company.title = 'NetApp'
+        t_company.capacity = 16
+        t_company.save()
+
+        if not t_person in t_company.persons:
+            t_company.persons.add(t_person)
+
+        t_test = Person_model.query({'companies__fn_count__eq':'NetApp'})
+
         pass
 
     # Query tester
