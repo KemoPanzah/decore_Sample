@@ -41,7 +41,7 @@ class Global_management_base:
         if not t_person in t_company.persons:
             t_company.persons.add(t_person)
 
-        t_test = Person_model.query({'last_name__eq':'Rohark', 'companies__title__eq':'NetApp' ,'count_companies__lt': 2, 'count_companies__gt': 0})
+        t_test = list(Person_model.query({'companies__title__eq':'NetApp' ,'count_companies__lt': Person_model.capacity, 'count_companies__gt': 0}))
 
         pass
 
