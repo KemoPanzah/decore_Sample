@@ -29,7 +29,7 @@ class Global_management_base:
         t_person.last_name = 'Rohark'
         t_person.academic_degree = 'PhD'
         t_person.age = 43
-        t_person.capacity = 1
+        t_person.capacity = 2
         t_person.save()
 
         t_company = Company_model()
@@ -41,7 +41,7 @@ class Global_management_base:
         if not t_person in t_company.persons:
             t_company.persons.add(t_person)
 
-        t_test = list(Person_model.query({'companies__title__eq':'NetApp' ,'count_companies__lt': Person_model.capacity, 'count_companies__gt': 0}))
+        t_test = list(Person_model.query({'companies__title__eq':'NetApp' ,'count_companies__lt': 'capacity', 'count_companies__gt': 'capacity'}))
 
         pass
 

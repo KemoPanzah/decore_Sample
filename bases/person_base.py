@@ -12,7 +12,7 @@ class Person_base:
         
         @decore.dialog(title='Add person...', icon='mdi-plus' , type='standard', activator='default-menu')
         def per_vi1_di3():
-            @decore.widget(type='form', fields=[Model.first_name, Model.last_name, Model.academic_degree, Model.age, Model.capacity, Model.companies, Model.accounts])
+            @decore.widget(title='Add a person', type='form', fields=[Model.first_name, Model.last_name, Model.academic_degree, Model.age, Model.capacity, Model.companies, Model.accounts])
             def per_vi1_di3_wi1():
                 @decore.action(type='submit')
                 def per_vi1_di3_wi1_ac1(self, data):

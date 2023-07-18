@@ -1,7 +1,7 @@
 from decore_base.uniform.conform_model import *
 from mimesis import Person
 from random import randrange
-from peewee import fn, Case
+from peewee import fn
 
 def get_random_age():
     return Person().age(minimum=16, maximum=64)
@@ -17,9 +17,10 @@ class Person_model(Conform_model):
     academic_degree = CharField(verbose_name='Academic degree', default=Person().academic_degree)
     age = IntegerField(verbose_name='Age', default=get_random_age)
     capacity = IntegerField(verbose_name='Capacity', default=get_random_capacity)
-
+    
     @Decore_model.user_query()
     def count_companies(cls, source_query, operator, value):
+        value = getattr(cls, value)
         return_query = (source_query
                         .join(cls.companies.through_model.alias())
                         .join(cls.companies.rel_model.alias())
