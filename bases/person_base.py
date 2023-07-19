@@ -1,20 +1,17 @@
 from decore_base import decore
 from models.person_model import Person_model as Model
 
-@decore.base(title='Person', model=Model)
+@decore.base(title='Personal management',icon='mdi-account-group' , model=Model)
 class Person_base:
-    @decore.widget(parent_id='com_vi1_di1', title='Persons', type='table', fields=Model.field_s)
-    def com_vi1_di1_wi1():
-        pass
     
-    @decore.view(parent_id='Global_management_base', title='Persons', icon='mdi-account-group-outline', type='table', fields=Model.field_s, filters=[Model.academic_degree, Model.companies, Model.accounts])
+    @decore.view(title='Persons', icon='mdi-account', type='table', fields=Model.field_s, filters=[Model.academic_degree])
     def per_vi1():
         
         @decore.dialog(title='Add person...', icon='mdi-plus' , type='standard', activator='default-menu')
         def per_vi1_di3():
-            @decore.widget(title='Add a person', type='form', fields=[Model.first_name, Model.last_name, Model.academic_degree, Model.age, Model.capacity, Model.companies, Model.accounts])
+            @decore.widget(title='Add a person', type='form', fields=[Model.first_name, Model.last_name, Model.academic_degree, Model.age])
             def per_vi1_di3_wi1():
-                @decore.action(type='submit')
+                @decore.action(type='submit', title='Submit Person')
                 def per_vi1_di3_wi1_ac1(self, data):
                     t_item = Model(**data['item'])
                     t_item.title = t_item.first_name + ' ' + t_item.last_name

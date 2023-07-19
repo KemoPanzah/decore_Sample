@@ -1,7 +1,7 @@
 from decore_base import decore
 from models.person_model import Person_model
 from models.account_model import Account_model
-from models.company_model import Company_model
+from models.contract_model import Company_model
 
 
 from mimesis import Person, Finance
@@ -15,11 +15,12 @@ class Global_management_base:
 
     @decore.function(type='shot')
     def create_data(self):
-        self.test_item()
+        # self.test_item()
         # self.query_tester()
         # self.create_company_s()
         # self.create_person_s()
         # self.set_company_person()
+        pass
     
     def test_item(self):
         t_person = Person_model()
