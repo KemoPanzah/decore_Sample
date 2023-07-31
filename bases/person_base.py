@@ -20,9 +20,15 @@ class Person_base:
                     else:
                         return False, 'Error!'
         
-        @decore.action(title='Test action', icon='mdi-test-tube', type='standard', activator='default-menu')
+        @decore.action(title='Remove Persons', icon='mdi-delete', type='standard', activator='default-menu')
         def per_vi1_ac1(self, p_data):
-            return True, 'Success!'
+            if not len(p_data['select_s']) == 0:
+                for i_select in p_data['select_s']:
+                    t_item = Model.get_by_id(i_select['id'])
+                    t_item.delete_instance()
+                return True, 'Success!'
+            else:
+                return False, 'No items selected!'
         
         @decore.dialog(title='Person', type='standard', display='drawer', activator='item-click')
         def per_vi1_di1():
