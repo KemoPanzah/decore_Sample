@@ -7,7 +7,7 @@ class Person_base:
     @decore.view(title='Persons', icon='mdi-account', type='table', fields=Model.field_s, filters=[Model.academic_degree])
     def per_vi1():
         
-        @decore.dialog(title='Add person...', icon='mdi-plus' , type='standard', activator='default-menu')
+        @decore.dialog(title='Add person...', icon='mdi-plus' , type='standard', activator='default')
         def per_vi1_di3():
             @decore.widget(title='Add a person', type='form', fields=[Model.first_name, Model.last_name, Model.academic_degree, Model.age])
             def per_vi1_di3_wi1():
@@ -20,7 +20,7 @@ class Person_base:
                     else:
                         return False, 'Error!'
         
-        @decore.action(title='Remove Persons', icon='mdi-delete', type='standard', activator='default-menu')
+        @decore.action(title='Remove Persons', icon='mdi-delete', type='standard', activator='default')
         def per_vi1_ac1(self, p_data):
             if not len(p_data['select_s']) == 0:
                 for i_select in p_data['select_s']:
@@ -30,19 +30,19 @@ class Person_base:
             else:
                 return False, 'No items selected!'
         
-        @decore.dialog(title='Person', type='standard', display='drawer', activator='item-click')
+        @decore.dialog(title='Person', type='standard', display='drawer', activator='click')
         def per_vi1_di1():
             @decore.widget(title='Informations', type='info', fields=Model.field_s)
             def per_vi1_di1_wi1():
-                @decore.dialog(title='Edit Person', icon='mdi-pencil', type='standard', display='drawer', activator='item-menu')
-                def per_vi1_wi1_di1():
+                @decore.dialog(title='Edit Person', icon='mdi-pencil', type='standard', display='drawer', activator='context')
+                def per_vi1_di1_wi1_di1():
                     @decore.widget(type='form', fields=[Model.first_name, Model.last_name])
                     def per_vi1_di1_wi1_di1_wi1():
                         @decore.action(type='submit')
                         def per_vi1_di1_wi1_di1_wi1_ac1(self, p_data):
                             return True, 'Success!'
         
-        @decore.dialog(title='Edit Person', icon='mdi-pencil', type='standard', display='drawer', activator='item-menu')
+        @decore.dialog(title='Edit Person', icon='mdi-pencil', type='standard', display='drawer', activator='context')
         def per_vi1_di2():
             @decore.widget(type='form', fields=[Model.first_name, Model.last_name])
             def per_vi1_di2_wi1():
