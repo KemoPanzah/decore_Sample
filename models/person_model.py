@@ -7,7 +7,7 @@ def get_random_age():
     return Person().age(minimum=24, maximum=64)
 
 class Person_model(Conform_model):
-    contracts = BackrefMetaField(verbose_name='Contracts')
+    contracts = BackrefMetaField(verbose_name='Contracts', filter_fields=['position', 'start_date', 'end_date' ,'fixed_term'])
     first_name = CharField(verbose_name='First name', default=Person().first_name)
     last_name = CharField(verbose_name='Last name', default=Person().last_name)
     age = IntegerField(verbose_name='Age', default=get_random_age)
