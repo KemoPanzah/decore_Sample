@@ -46,9 +46,7 @@ class Test_base:
             @decore.widget(title='Formtest', icon='mdi-test-tube', type='form', fields=[Model.booleanfield, Model.charfield, Model.datefield, Model.datetimefield,Model.floatfield,Model.foreignkeyfield, Model.intfield, Model.manytomanyfield ,Model.textfield, Model.passwordfield])
             def tst_vi1_di1_wi1():
                 @decore.action(title='Submit', type='submit', icon='mdi-test-tube')
-                def tst_vi1_di1_wi1_ac1(self, t_data):
-                    t_item = Model()
-                    t_item.title = 'Test_item'
-                    t_item.datefield = t_data['item']['datefield']
+                def tst_vi1_di1_wi1_ac1(self, item:Model, **kwargs):
+                    item.title = 'Test_item'
                     # t_item.save()
                     return True, 'Success'
