@@ -1,6 +1,8 @@
 from decore_base import decore
 from models.person_model import Person_model as Model
 
+import time
+
 @decore.base(title='Personal management',icon='mdi-account-group' , model=Model)
 class Person_base:
     
@@ -15,7 +17,7 @@ class Person_base:
                 def per_vi1_di3_wi1_ac1(self, item:Model, **kwargs):
                     item.title = item.first_name + ' ' + item.last_name
                     if item.save():
-                        return True, 'Success!'
+                        return True, item.title + ' was successfully added!'
                     else:
                         return False, 'Error!'
         
@@ -28,6 +30,13 @@ class Person_base:
                 return True, 'Success!'
             else:
                 return False, 'No items selected!'
+            
+        @decore.action(title='Test Progress', icon='mdi-progress-clock', type='standard', activator='default')
+        def per_vi1_ac2(self, active, **kwargs):
+            for i in range(0, 100):
+                active.progress = i
+                time.sleep(0.1)
+            return True, 'Time is over, my friend!'
         
         @decore.dialog(title='Person', type='standard', display='drawer', activator='click')
         def per_vi1_di1():
