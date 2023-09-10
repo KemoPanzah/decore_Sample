@@ -47,7 +47,7 @@ class Person_base:
                     @decore.widget(type='form', fields=[Model.first_name, Model.last_name])
                     def per_vi1_di1_wi1_di1_wi1():
                         @decore.action(type='submit')
-                        def per_vi1_di1_wi1_di1_wi1_ac1(self, p_data):
+                        def per_vi1_di1_wi1_di1_wi1_ac1(self, **kwargs):
                             return True, 'Success!'
         
         @decore.dialog(title='Edit Person', icon='mdi-pencil', type='standard', display='drawer', activator='context')
@@ -55,9 +55,8 @@ class Person_base:
             @decore.widget(type='form', fields=[Model.first_name, Model.last_name])
             def per_vi1_di2_wi1():
                 @decore.action(type='submit')
-                def per_vi1_di2_wi1_ac1(self, data):
-                    t_item = Model(**data['item'])
-                    if t_item.save():
+                def per_vi1_di2_wi1_ac1(self, item, **kwargs):
+                    if item.save():
                         return True, 'Success!'
                     else:
                         return False, 'Error!'

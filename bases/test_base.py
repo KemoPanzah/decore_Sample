@@ -10,6 +10,8 @@ class Test_base:
 
     @decore.function()
     def tst_fu1(self):
+
+        t_item = Model()
         
         t_item = Test_foreign_model.get_or_none(Test_foreign_model.title == 'Test_item : default')
         if not t_item:
