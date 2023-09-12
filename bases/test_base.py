@@ -50,5 +50,5 @@ class Test_base:
                 @decore.action(title='Submit', type='submit', icon='mdi-test-tube')
                 def tst_vi1_di1_wi1_ac1(self, item:Model, **kwargs):
                     item.title = 'Test_item'
-                    # t_item.save()
+                    item.save()
                     return True, 'Success'
