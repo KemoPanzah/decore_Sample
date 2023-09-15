@@ -11,7 +11,7 @@ class Test_model(Conform_model):
     datefield = DateField(verbose_name='DateField', help_text='A field to store a date in database', default=datetime.date.today)
     datetimefield = DateTimeField(verbose_name='DateTimeField', help_text='A field to store a datetime in database', default=datetime.datetime.now)
     floatfield = FloatField(verbose_name='FloatField', help_text='A field to store a float in database', default=0.5)
-    foreignkeyfield = ForeignKeyField(default="5ee30840-4714-11ee-a9ff-309c23812330", verbose_name='ForeignKeyField', help_text='A field to store a foreignkey in database', model=Test_foreign_model, options_query={'options__eq': True})
+    foreignkeyfield = ForeignKeyField(verbose_name='ForeignKeyField', help_text='A field to store a foreignkey in database', model=Test_foreign_model, options_query={'options__eq': True})
     intfield = IntegerField(verbose_name='IntegerField', help_text='A field to store a integer in database')
     manytomanyfield = ManyToManyField(model=Test_manytomany_model, backref='test_manytomany', verbose_name='ManyToManyField', help_text='A field to store a manytomany in database', options_query={'options__eq': True})
     manytomanybackreffield = BackrefMetaField(help_text='A field to store a manytomany backref in database', verbose_name='ManyToManyBackrefField', options_query={'options__eq': True})
