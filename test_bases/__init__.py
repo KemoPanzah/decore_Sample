@@ -1,0 +1,4 @@
+from .test_base import Test_base
+from .test_foreign_base import Test_foreign_base
+from .test_manytomany_base import Test_manytomany_base
+from .test_manytomany_backref_base import Test_manytomany_backref_base

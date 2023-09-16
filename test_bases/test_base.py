@@ -1,10 +1,10 @@
 import random
 
 from decore_base import decore
-from models.test_model import Test_model as Model
-from models.test_foreign_model import Test_foreign_model
-from models.test_manytomany_model import Test_manytomany_model
-from models.test_manytomany_backref_model import Test_manytomany_backref_model
+from test_models.test_model import Test_model as Model
+from test_models.test_foreign_model import Test_foreign_model
+from test_models.test_manytomany_model import Test_manytomany_model
+from test_models.test_manytomany_backref_model import Test_manytomany_backref_model
 
 @decore.base(title='Test Base 1', icon='mdi-test-tube', model=Model)
 class Test_base:
@@ -60,7 +60,7 @@ class Test_base:
     def tst_vi1():
         @decore.dialog(title='Formtest', icon='mdi-test-tube', type='standard', display='drawer', activator='none')
         def tst_vi1_di1():
-            @decore.widget(title='Formtest', icon='mdi-test-tube', type='form', fields=[Model.booleanfield, Model.charfield, Model.datefield, Model.datetimefield,Model.floatfield,Model.foreignkeyfield, Model.intfield, Model.manytomanyfield, Model.manytomanybackreffield ,Model.textfield, Model.passwordfield])
+            @decore.widget(title='Formtest', icon='mdi-test-tube', type='form', fields=[Model.boolean, Model.char, Model.date, Model.datetime,Model.float,Model.foreignkey, Model.int, Model.manytomany, Model.mm_backrefs ,Model.text, Model.password])
             def tst_vi1_di1_wi1():
                 @decore.action(title='Submit', type='submit', icon='mdi-test-tube')
                 def tst_vi1_di1_wi1_ac1(self, item:Model, **kwargs):

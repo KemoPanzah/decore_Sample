@@ -5,6 +5,7 @@ sys.path.append(os.path.abspath('../decore_Base'))
 
 from decore_base import decore
 from bases import *
+from test_bases import *
 
 
 if __name__ == '__main__':
