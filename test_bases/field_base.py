@@ -29,3 +29,14 @@ class Field_base:
                     item.title = 'Test_item'
                     item.save()
                     return True, 'Success'
+        
+        @decore.dialog(title='Edit field data', icon='mdi-table', type='standard', display='drawer', activator='context')
+        def tfb_vi2_di2():
+            @decore.widget(title='Field form', icon='mdi-table', type='form', fields=[Model.boolean, Model.char, Model.date, Model.datetime,Model.float,Model.foreignkey, Model.fk_backrefs, Model.int, Model.manytomany, Model.mm_backrefs ,Model.text, Model.password])
+            def tfb_vi2_di2_wi1():
+                @decore.action(title='Submit', type='submit', icon='mdi-table')
+                def tfb_vi2_di2_wi1_ac1(self, item:Model, **kwargs):
+                    item.title = 'Test_item'
+                    item.save()
+                    return True, 'Success'
+        
