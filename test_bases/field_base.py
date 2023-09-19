@@ -8,7 +8,7 @@ class Field_base:
     def tfb_vi1():
         @decore.dialog(title='Field test dialog', icon='mdi-tune', type='standard', display='drawer', activator='none')
         def tfb_vi1_di1():
-            @decore.widget(title='Field form', icon='mdi-tune', type='form', fields=[Model.boolean, Model.char, Model.date, Model.datetime,Model.float,Model.foreignkey, Model.fk_backrefs, Model.int, Model.manytomany, Model.mm_backrefs ,Model.text, Model.password])
+            @decore.widget(title='Field form', icon='mdi-tune', type='form', fields=[Model.boolean, Model.char, Model.char_choice, Model.date, Model.datetime,Model.float,Model.foreignkey, Model.fk_backrefs, Model.int, Model.int_choice, Model.manytomany, Model.mm_backrefs ,Model.text, Model.password])
             def tfb_vi1_di1_wi1():
                 @decore.action(title='Submit', type='submit', icon='mdi-tune')
                 def tfb_vi1_di1_wi1_ac1(self, item:Model, **kwargs):
