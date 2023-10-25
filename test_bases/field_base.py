@@ -4,9 +4,9 @@ from test_models.field_model import Field_model as Model
 
 @decore.base(title='Field Base', icon='mdi-soccer-field', model=Model)
 class Field_base:
-    @decore.view(title='Field last', icon='mdi-tune', type='table', parent_id='Test_base', fields=[Model.boolean, Model.char, Model.date, Model.datetime,Model.float,Model.foreignkey, Model.fk_backrefs ,Model.int, Model.manytomany, Model.mm_backrefs ,Model.text, Model.password])
+    @decore.view(title='Field last', icon='mdi-tune', type='empty', parent_id='Test_base')
     def tfb_vi1():
-        @decore.dialog(title='Field test dialog', icon='mdi-tune', type='standard', display='drawer', activator='none')
+        @decore.dialog(title='Field test dialog', icon='mdi-tune', type='standard', display='drawer', activator='last')
         def tfb_vi1_di1():
             @decore.widget(title='Field form', icon='mdi-tune', type='form', fields=[Model.boolean, Model.char, Model.char_choice, Model.date, Model.datetime,Model.float,Model.foreignkey, Model.fk_backrefs, Model.int, Model.int_choice, Model.manytomany, Model.mm_backrefs ,Model.text, Model.password])
             def tfb_vi1_di1_wi1():
