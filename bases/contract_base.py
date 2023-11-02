@@ -3,7 +3,7 @@ from models.contract_model import Contract_model as Model
 
 import datetime
 
-@decore.base(title='Contract management', model=Model, role=10)
+@decore.base(title='Contract management', model=Model)
 class Contract_base:
     
     @decore.function(type='shot')

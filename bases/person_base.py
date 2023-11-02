@@ -3,7 +3,7 @@ from models.person_model import Person_model as Model
 
 import time
 
-@decore.base(title='Personal management',icon='mdi-account-group' , model=Model, role=10)
+@decore.base(title='Personal management',icon='mdi-account-group' , model=Model)
 class Person_base:
     
     @decore.view(title='Persons', icon='mdi-account', type='table', fields=[Model.title, Model.academic_degree ,Model.age, Model.contracts], filters=[Model.academic_degree, Model.contracts])

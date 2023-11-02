@@ -7,7 +7,7 @@ from models.contract_model import Company_model
 from mimesis import Person, Finance
 from random import randrange
 
-@decore.base(title='Global Management', icon='mdi-account-supervisor-circle-outline', role=10)
+@decore.base(title='Global Management', icon='mdi-account-supervisor-circle-outline')
 class Global_management_base:
     def __init__(self):
         self.test_attr = 'test_attr'

@@ -7,7 +7,7 @@ from test_models.fk_br_model import Fk_br_model
 from test_models.mm_model import Mm_model
 from test_models.mm_br_model import Mm_br_model
 
-@decore.base(title='Test Base', icon='mdi-test-tube', role=10)
+@decore.base(title='Test Base', icon='mdi-test-tube')
 class Test_base:
 
     @decore.function()
