@@ -29,6 +29,6 @@ class Contract_base:
 
     @decore.view(parent_id='Person_base', title='Contracts', icon='mdi-certificate', fields=Model.field_s)
     def con_vi1():
-        @decore.dialog(title='Company', type='standard', display='drawer', activator='click')
+        @decore.dialog(title='Company', type='standard', display='draw-half', activator='click')
         def con_vi1_di1():
             pass

@@ -38,11 +38,11 @@ class Person_base:
                 time.sleep(0.1)
             return True, 'Time is over, my friend!'
         
-        @decore.dialog(title='Person', type='standard', display='drawer', activator='click')
+        @decore.dialog(title='Person', type='standard', display='draw-half', activator='click')
         def per_vi1_di1():
             @decore.widget(title='Informations', type='info', fields=Model.field_s)
             def per_vi1_di1_wi1():
-                @decore.dialog(title='Edit Person', icon='mdi-pencil', type='standard', display='drawer', activator='context')
+                @decore.dialog(title='Edit Person', icon='mdi-pencil', type='standard', display='draw-half', activator='context')
                 def per_vi1_di1_wi1_di1():
                     @decore.widget(type='form', fields=[Model.title, Model.first_name, Model.last_name])
                     def per_vi1_di1_wi1_di1_wi1():
@@ -54,7 +54,7 @@ class Person_base:
                             else:
                                 return False, 'Error!'
         
-        @decore.dialog(title='Edit Person', icon='mdi-pencil', type='standard', display='drawer', activator='context')
+        @decore.dialog(title='Edit Person', icon='mdi-pencil', type='standard', display='draw-half', activator='context')
         def per_vi1_di2():
             @decore.widget(type='form', fields=[Model.first_name, Model.last_name])
             def per_vi1_di2_wi1():

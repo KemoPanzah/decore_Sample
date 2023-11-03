@@ -9,6 +9,6 @@ from test_bases import *
 
 
 if __name__ == '__main__':
-    @decore.app(title='Decore Sample Application')
+    @decore.app(title='Decore Sample Application', allow_guest=False)
     def main():
         pass
