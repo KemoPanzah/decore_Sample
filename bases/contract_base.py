@@ -11,7 +11,7 @@ class Contract_base:
         t_item = Model()
         pass
 
-    @decore.widget(parent_id='per_vi1_di1_wi1', title='Contracts', type='table', fields=[Model.position, Model.start_date, Model.end_date, Model.fixed_term])
+    @decore.widget(parent_id='per_vi1_di1_wi1', title='Contracts', type='info', fields=[Model.position, Model.start_date, Model.end_date, Model.fixed_term])
     def per_vi1_di1_wi1_wi1():
         @decore.dialog(title='Add contract', icon='mdi-plus' , type='standard', activator='default')
         def per_vi1_di1_wi1_wi1_di1():
