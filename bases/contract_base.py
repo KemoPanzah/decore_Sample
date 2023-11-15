@@ -11,7 +11,7 @@ class Contract_base:
         t_item = Model()
         pass
 
-    @decore.widget(parent_id='per_vi1_di1_wi1', title='Contracts', type='table', fields=[Model.position, Model.start_date, Model.end_date, Model.fixed_term])
+    @decore.widget(parent_id='per_vi1_di1_wi1', title='Contract', icon='mdi-certificate', type='info', fields=[Model.position, Model.start_date, Model.end_date, Model.fixed_term])
     def per_vi1_di1_wi1_wi1():
         @decore.dialog(title='Add contract', icon='mdi-plus' , type='standard', activator='default')
         def per_vi1_di1_wi1_wi1_di1():
@@ -28,7 +28,10 @@ class Contract_base:
                         return False, 'Error!'
 
     @decore.view(parent_id='Person_base', title='Contracts', icon='mdi-certificate', fields=Model.field_s)
-    def con_vi1():
-        @decore.dialog(title='Company', type='standard', display='draw-half', activator='click')
-        def con_vi1_di1():
-            pass
+    def contracts():
+        @decore.dialog(title='Contract Details', type='standard', display='draw-half', activator='click')
+        def contract_details():
+            @decore.widget(title='Informations', icon='mdi-certificate', type='info', fields=Model.field_s)
+            def contract_details_informations():
+                pass
+               

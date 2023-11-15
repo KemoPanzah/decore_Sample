@@ -6,6 +6,10 @@ import time
 @decore.base(title='Personal management',icon='mdi-account-group' , model=Model)
 class Person_base:
     
+    @decore.widget(parent_id='contract_details_informations', title='Person', icon='mdi-account', type='info', fields=Model.field_s)
+    def contract_details_informations_person():
+        pass
+
     @decore.view(title='Persons', icon='mdi-account', type='table', fields=[Model.title, Model.academic_degree ,Model.age, Model.contracts], filters=[Model.academic_degree, Model.contracts])
     def per_vi1():
         
@@ -40,7 +44,7 @@ class Person_base:
         
         @decore.dialog(title='Person', type='standard', display='draw-half', activator='click')
         def per_vi1_di1():
-            @decore.widget(title='Informations', type='info', fields=Model.field_s)
+            @decore.widget(title='Informations', icon='mdi-account', type='info', fields=Model.field_s)
             def per_vi1_di1_wi1():
                 @decore.dialog(title='Edit Person', icon='mdi-pencil', type='standard', display='draw-half', activator='context')
                 def per_vi1_di1_wi1_di1():
