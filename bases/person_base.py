@@ -62,9 +62,10 @@ class Person_base:
         def per_vi1_di2():
             @decore.widget(type='form', fields=[Model.first_name, Model.last_name])
             def per_vi1_di2_wi1():
-                @decore.action(type='submit')
+                @decore.action(title='Submit Person', type='submit')
                 def per_vi1_di2_wi1_ac1(self, item, **kwargs):
+                    item.title = item.first_name + ' ' + item.last_name
                     if item.save():
-                        return True, 'Success!'
+                        return True, item.title + ' was successfully changed!'
                     else:
                         return False, 'Error!'
