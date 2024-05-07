@@ -1,7 +1,7 @@
 from decore_base import decore
 from decore_base.library.powershell.powershell import Ps_process, PS_command
 
-@decore.base(title='Sign.dec', icon='mdi-sign-caution', desc='decore Base | Signature Dashboard')
+@decore.base(title='Sign.dec', icon='mdi-sign-caution', desc='decore Base | Signature Dashboard', stretch=True)
 class Sign_dec_base:
     ps = Ps_process()
 
@@ -22,3 +22,19 @@ class Sign_dec_base:
             return True, t_result.result
         else:
             return False, t_result.result
+        
+    @decore.view(title='Template tester', icon='mdi-test-tube', desc='Template test', type='blank')
+    def sign_dec_vi0():
+        
+        @decore.dialog(title='Template tester', icon='mdi-test-tube', desc='Template test')
+        def sign_dec_vi0_di0():
+
+            @decore.widget(title='Template tester', icon='mdi-test-tube', desc='Template test', type='default')
+            def sign_dec_vi0_di0_wi0():
+            
+                @decore.template(title='Template-Tester')
+                def sign_dec_vi0_te0(self, user, **kwargs):
+                    t = '''
+                    <h1>Hello {{name}} SUPER TESTER - TEMPLATE TESTER</h1>
+                    '''
+                    return t, {'name':user.title}
