@@ -27,7 +27,7 @@ class Contract_base:
                     else:
                         return False, 'Error!'
 
-    @decore.view(parent_id='Person_base', title='Contracts', icon='mdi-certificate', fields=Model.field_s)
+    @decore.view(parent_id='Person_base', title='Contracts', icon='mdi-certificate', type="table", fields=Model.field_s)
     def contracts():
         @decore.dialog(title='Contract Details', type='standard', display='draw-half', activator='click')
         def contract_details():
