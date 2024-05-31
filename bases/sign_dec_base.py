@@ -1,9 +1,14 @@
 from decore_base import decore
 from decore_base.library.powershell.powershell import Ps_process, PS_command
 
-@decore.base(title='Sign.dec', icon='mdi-sign-caution', desc='decore Base | Signature Dashboard', stretch=True)
+@decore.base(title='Sign.dec', icon='mdi-sign-caution', desc='decore Base | Signature Dashboard')
 class Sign_dec_base:
     ps = Ps_process()
+
+    @decore.hook()
+    def sign_dec_base_ho0(self, pool, **kwargs):
+        pool['Sign_dec_base'].stretch = True
+        
 
     @decore.action(parent_id='sign_dec_user_view', title='Connect EXO', icon='mdi-connection', desc='Connect to Exchange Online', activator='default')
     def sign_dec_user_view_ac1(self, **kwargs):
