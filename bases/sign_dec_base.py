@@ -1,14 +1,15 @@
 from decore_base import decore
 from decore_base.library.powershell.powershell import Ps_process, PS_command
 
+
 @decore.base(title='Sign.dec', icon='mdi-sign-caution', desc='decore Base | Signature Dashboard')
 class Sign_dec_base:
     ps = Ps_process()
 
     @decore.hook()
     def sign_dec_base_ho0(self, pool, **kwargs):
-        pool['Sign_dec_base'].stretch = True
-        
+        pool['sign_dec_vi0'].enabled = True
+        pool['sign_dec_user_view'].enabled = False
 
     @decore.action(parent_id='sign_dec_user_view', title='Connect EXO', icon='mdi-connection', desc='Connect to Exchange Online', activator='default')
     def sign_dec_user_view_ac1(self, **kwargs):
@@ -18,28 +19,29 @@ class Sign_dec_base:
             return True, 'Connected to Exchange Online'
         else:
             return False, t_result.result
-        
+
     @decore.action(parent_id='sign_dec_user_view', title='Sync user', icon='mdi-sync', desc='Synchronize online user', activator='default')
     def sign_dec_user_view_ac2(self, **kwargs):
-        t_cmd = PS_command('Get-User').cmd('Select-Object', Property=['UserPrincipalName','DisplayName', 'RecipientType'])
+        t_cmd = PS_command('Get-User').cmd('Select-Object',
+                                           Property=['UserPrincipalName', 'DisplayName', 'RecipientType'])
         t_result = self.ps.execute(t_cmd)
         if t_result.success:
             return True, t_result.result
         else:
             return False, t_result.result
-        
-    @decore.view(title='Template tester', icon='mdi-test-tube', desc='Template test', type='blank')
+
+    @decore.view(title='Connect to EXO', icon='mdi-connection', desc='Connect to Exchange Online', type='blank')
     def sign_dec_vi0():
-        
+
         @decore.dialog(title='Template tester', icon='mdi-test-tube', desc='Template test')
         def sign_dec_vi0_di0():
 
             @decore.widget(title='Template tester', icon='mdi-test-tube', desc='Template test', type='default')
             def sign_dec_vi0_di0_wi0():
-            
+
                 @decore.template(title='Template-Tester')
                 def sign_dec_vi0_te0(self, user, **kwargs):
                     t = '''
-                    <h1>Hello {{name}} SUPER TESTER - TEMPLATE TESTER</h1>
+                    <p> Exchange Online ist nicht verbunden </p>
                     '''
-                    return t, {'name':user.title}
+                    return t, {}
