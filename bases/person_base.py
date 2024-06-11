@@ -39,7 +39,7 @@ class Person_base:
         def per_vi1_ac2(self, active, **kwargs):
             for i in range(0, 100):
                 active.progress = i
-                time.sleep(0.1)
+                time.sleep(0.05)
             return True, 'Time is over, my friend!'
         
         @decore.dialog(title='Person', type='standard', display='draw-half', activator='click')

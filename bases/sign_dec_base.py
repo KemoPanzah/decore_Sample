@@ -7,9 +7,9 @@ class Sign_dec_base:
     ps = Ps_process()
 
     @decore.hook()
-    def sign_dec_base_ho0(self, pool, **kwargs):
-        pool['sign_dec_vi0'].enabled = True
-        pool['sign_dec_user_view'].enabled = False
+    def sign_dec_base_ho0(self, pool, route, **kwargs):
+        pool['sign_dec_vi0_di0'].title = 'Connect to Exchange Online jetzt erst recht'
+        route.path = '/Sign_dec_base/sign_dec_vi0'
 
     @decore.action(parent_id='sign_dec_user_view', title='Connect EXO', icon='mdi-connection', desc='Connect to Exchange Online', activator='default')
     def sign_dec_user_view_ac1(self, **kwargs):
@@ -30,16 +30,16 @@ class Sign_dec_base:
         else:
             return False, t_result.result
 
-    @decore.view(title='Connect to EXO', icon='mdi-connection', desc='Connect to Exchange Online', type='blank')
+    @decore.view(title='Connect to EXO', icon='mdi-connection', desc='Connect to Exchange Online', type='blank', hide=True)
     def sign_dec_vi0():
 
-        @decore.dialog(title='Template tester', icon='mdi-test-tube', desc='Template test')
+        @decore.dialog(title='Connect to Exchange Online', icon='mdi-test-tube', desc='Template test', display='draw-full')
         def sign_dec_vi0_di0():
 
-            @decore.widget(title='Template tester', icon='mdi-test-tube', desc='Template test', type='default')
+            @decore.widget(type='default')
             def sign_dec_vi0_di0_wi0():
 
-                @decore.template(title='Template-Tester')
+                @decore.template()
                 def sign_dec_vi0_te0(self, user, **kwargs):
                     t = '''
                     <p> Exchange Online ist nicht verbunden </p>
