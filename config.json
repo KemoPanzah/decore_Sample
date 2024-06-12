@@ -1,7 +1,8 @@
 {
     "default": {
-        "app_id": "5f36494b-5cfe-44ef-b800-1d2c430a521d",
-        "app_port": 5555,
+        "app_id": "2a1399e7-b131-44a1-8f68-0d2858b56900",
+        "fqdn": "localhost",
+        "port": 5555,
         "state_path": "state"
     },
     "remote": {
