@@ -1,7 +1,7 @@
 {
     "default": {
         "app_id": "2a1399e7-b131-44a1-8f68-0d2858b56900",
-        "fqdn": "localhost",
+        "fqdn": "pc-79.decon.lan",
         "port": 5555,
         "state_path": "state"
     },
