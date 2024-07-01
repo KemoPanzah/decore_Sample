@@ -29,7 +29,7 @@ class Contract_base:
 
     @decore.view(parent_id='Person_base', title='Contracts', icon='mdi-certificate', type="table", fields=Model.field_s)
     def contracts():
-        @decore.dialog(title='Contract Details', type='standard', display='draw-half', activator='click')
+        @decore.dialog(title='Contract Details', type='standard', activator='click')
         def contract_details():
             @decore.widget(title='Informations', icon='mdi-certificate', type='info', fields=Model.field_s)
             def contract_details_informations():

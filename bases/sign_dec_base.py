@@ -33,7 +33,7 @@ class Sign_dec_base:
     @decore.view(title='Connect to EXO', icon='mdi-connection', desc='Connect to Exchange Online', type='blank', hide=True)
     def sign_dec_vi0():
 
-        @decore.dialog(title='Connect to Exchange Online', icon='mdi-test-tube', desc='Template test', display='draw-full')
+        @decore.dialog(title='Connect to Exchange Online', icon='mdi-test-tube', desc='Template test')
         def sign_dec_vi0_di0():
 
             @decore.widget(type='default')
