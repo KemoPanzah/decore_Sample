@@ -1,5 +1,8 @@
 # from .global_management_base import Global_management_base
 from .beershop import Beershop
+from .beverage import Beverage
+from .beverage_cat import Beverage_cat
+from .beverage_type import Beverage_type
 from .person_base import Person_base
 from .contract_base import Contract_base
 from .keycard_base import Keycard_base

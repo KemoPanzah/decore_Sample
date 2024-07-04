@@ -7,7 +7,7 @@ class Keycard_base:
     def key_vi1():
         pass
 
-    @decore.widget(parent_id='per_vi1_di1', title='Keycards', icon='mdi-key', type='table', fields=Model.field_s)
+    @decore.widget(parent_id='per_vi1_di1_wi1', title='Keycards', icon='mdi-key', type='table', fields=Model.field_s)
     def per_vi1_di1_wi2():
         @decore.dialog(title='Add Keycard', icon='mdi-plus', type='standard', activator='default')
         def per_vi1_di1_wi2_di1():

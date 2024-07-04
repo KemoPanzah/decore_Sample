@@ -15,7 +15,7 @@ class Contract_base:
     def per_vi1_di1_wi1_wi1():
         @decore.dialog(title='Add contract', icon='mdi-plus' , type='standard', activator='default')
         def per_vi1_di1_wi1_wi1_di1():
-            @decore.widget(title='Add a contract', type='form', fields=[Model.position, Model.fixed_term])
+            @decore.widget(title='Add a contract', type='form', fields=[Model.person, Model.position, Model.fixed_term])
             def per_vi1_di1_wi1_wi1_di1_wi1():
                 @decore.action(type='submit', title='Submit Contract')
                 def per_vi1_di1_wi1_wi1_di1_wi1_ac1(self, item, **kwargs):
